@@ -5,10 +5,23 @@ public class App {
 	//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
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		
+ 
+		int continua = 0;
 		Venta v = new Venta();
-		v.cargarDatosFactura();
+		
+		try {
+		continua = v.comienzaCargarFactura();
+		
+		} catch (VentaVaciaException e) {
+
+		e.printStackTrace();
+		}		
+		
+		if(continua == 1) {
+			v.cargarDatosFactura();
+		}
+	
 	}
 
 }
